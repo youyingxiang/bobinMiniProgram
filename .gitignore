@@ -1,0 +1,9 @@
+*.iml
+.idea
+*/.DS_Store
+*.DS_Store
+/node_modules
+/miniprogram_npm/@vant/weapp
+project.config.json
+node_modules
+miniprogram_npm
