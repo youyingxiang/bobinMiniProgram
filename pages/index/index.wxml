@@ -1,0 +1,19 @@
+<view class="content">
+  <view class="header">
+        <view wx:if="{{!hasUserInfo}}">
+            <navigator url="/pages/login/index">
+              <van-icon name="user-circle-o" color="#FFFFFF" size="50px"/> 
+              <view>登陆/注册</view>
+            </navigator>
+        </view>
+        <view wx:else>
+            <van-image width="50px" round height="50px" src="{{userInfo.avatar}}" />
+            <view>{{userInfo.name}}</view>
+        </view>
+  </view>
+  <van-cell-group>
+    <van-cell icon="add-o" open-type='getUserInfo'  title="添加房产" bind:click="addHouse" is-link/>
+    <van-cell icon="orders-o" title="房产列表" bind:click="houseList" is-link />
+    <van-cell icon="after-sale"  title="收益查询" bind:click="queryIncome"is-link />
+  </van-cell-group>
+</view>

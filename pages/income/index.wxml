@@ -1,0 +1,19 @@
+<!-- <image class="banner" src="{{ 'http://cdn.bobin.com.cn/www/images/784f05592e404df7d6caee4aa8e69050.jpg' }}"></image> -->
+<view class="content">
+  <van-panel title="您共有{{income.house_num|0}}处房产{{income.room_num|0}}间房" desc="积累总收入">
+    <van-cell title-class="income-title" title="¥ {{income.income|0}}元" />
+  </van-panel>
+  <!-- 自定义图标 -->
+  <view class="income-info">
+    <van-cell value="{{ currentYearMonth }}" readonly title="选择时间" is-link bind:click="showPopup" />
+    <van-popup show="{{ show }}" position="bottom" custom-style="height: 40%">
+      <van-datetime-picker type="year-month" value="{{ currentDate }}" min-date="{{ minDate }}" bind:input="onInput" bind:confirm="onConfirm" bind:cancel="onCancel" />
+    </van-popup>
+    <van-cell-group>
+      <van-field readonly input-align="right" value="¥ {{income.month_sum_price|0}}元" label="租金所得" />
+      <van-field readonly input-align="right" value="¥ {{income.month_sum_share|0}}元" label="平台抽佣" />
+      <van-field readonly input-align="right" value="¥ {{income.month_sum_other|0}}元" label="其他费用" />
+      <van-field readonly input-align="right" value="¥ {{income.month_income|0}}元" label="实际收入" />
+    </van-cell-group>
+  </view>
+</view>

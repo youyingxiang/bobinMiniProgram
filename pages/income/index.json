@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "收益查询",
+  "usingComponents": {
+    "van-field": "@vant/weapp/field/index",
+    "van-panel": "@vant/weapp/panel/index",
+    "van-divider": "@vant/weapp/divider/index",
+    "van-datetime-picker": "@vant/weapp/datetime-picker/index",
+    "van-popup": "@vant/weapp/popup/index",
+    "van-cell": "@vant/weapp/cell/index"
+  }
+}

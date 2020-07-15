@@ -1,0 +1,1 @@
+export const BASE_URL = 'https://wxapi.bobin.com.cn'; // pro
