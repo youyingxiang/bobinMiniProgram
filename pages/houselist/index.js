@@ -26,25 +26,34 @@ Page({
    */
   previewImage: function (event) {
     console.log(event.currentTarget.dataset.img);
-    wx.showLoading({
-      title: '加载中',
-    })
-    wx.downloadFile({
-      // 示例 url，并非真实存在
-      url: event.currentTarget.dataset.img,
-      success: function (res) {
-        const filePath = res.tempFilePath
-        wx.openDocument({
-          filePath: filePath,
-          success: function (res) {
-            console.log('打开文档成功')
-          },
-          complete: () => {
-            wx.hideLoading();
-          }
-        })
-      }
-    })
+    const fileName = event.currentTarget.dataset.img;
+    const suffixIndex = fileName.lastIndexOf(".");
+    const suffix = fileName.substring(suffixIndex + 1).toUpperCase();
+    if (suffix == "BMP" || suffix == "JPG" || suffix == "JPEG" || suffix == "PNG" || suffix == "GIF") {
+      wx.previewImage({
+        urls: [fileName]
+      })
+    } else {
+      wx.showLoading({
+        title: '加载中',
+      })
+      wx.downloadFile({
+        // 示例 url，并非真实存在
+        url: event.currentTarget.dataset.img,
+        success: function (res) {
+          const filePath = res.tempFilePath
+          wx.openDocument({
+            filePath: filePath,
+            success: function (res) {
+              console.log('打开文档成功')
+            },
+            complete: () => {
+              wx.hideLoading();
+            }
+          })
+        }
+      })
+    }
   },
   getHouseList: async function () {
     const { code, data, message } = await userServices.fetchGetHouseList()
