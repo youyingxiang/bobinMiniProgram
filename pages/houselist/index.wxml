@@ -1,6 +1,5 @@
 <view class="content">
   <!-- <view class="header"></view> -->
-  <van-panel title="三亚湾" desc="尊敬的业主,感谢您的信任与支持！，您共有x套房产托管给了「向往的宿」平台。"></van-panel>
   <van-panel wx:for="{{houseList}}" wx:key="key" wx:for-item='item' status="{{item.status}}" custom-class="house-list" title="{{index+1}} : {{item.name}}">
     <van-cell wx:if="{{item.room_info}}" label="地址：{{item.address}} ; 户型：{{item.room_info}}" />
     <van-cell wx:else label="地址：{{item.address}}" />
