@@ -1,15 +1,13 @@
 <view class="content">
   <!-- <view class="header"></view> -->
   <form bindsubmit="addFormSubmit">
-    <van-panel title="三亚湾" desc="如果您是业主，并在以下地区拥有闲置房产向我们托管，请如实填写以下信息，客服会尽快与您联系">
-      <van-cell-group>
-        <van-field required name="housename" value="{{ housename }}" label="房源名称" placeholder="请输入房源名称" />
-        <van-field required name="address" value="{{ address }}" label="房源地址" placeholder="请输入房源地址" />
-        <van-field required name="phone" value="{{ phone }}" label="您的电话" placeholder="请输入您的电话" />
-      </van-cell-group>
-    </van-panel>
-    <van-cell border="false">
-      <van-button type="primary" form-type="submit" disabled="{{disabled}}" round block>
+    <van-cell-group>
+      <van-field required name="housename" value="{{ housename }}" label="房源名称" placeholder="请输入房源名称" />
+      <van-field required name="address" value="{{ address }}" label="房源地址" placeholder="请输入房源地址" />
+      <van-field required name="phone" value="{{ phone }}" label="您的电话" placeholder="请输入您的电话" />
+    </van-cell-group>
+    <van-cell border="false" custom-class="add-house">
+      <van-button color="#0081c2" type="primary" form-type="submit" disabled="{{disabled}}" round block>
         添加新房产
       </van-button>
     </van-cell>

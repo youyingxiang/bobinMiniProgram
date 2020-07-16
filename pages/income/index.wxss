@@ -1,5 +1,5 @@
 .income-title{
-    margin-left:20px;
+    padding: 0;
     color: red !important;
     font-size: 20px !important;
   }

@@ -1,9 +1,10 @@
 /**app.wxss**/
+
 page {
-  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica,
-    Segoe UI, Arial, Roboto, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft Yahei',
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Segoe UI, Arial, Roboto, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft Yahei', sans-serif;
+  background-color: #f0f3f6
 }
+
 .container {
   height: 100%;
   display: flex;
@@ -12,13 +13,15 @@ page {
   justify-content: space-between;
   padding: 200rpx 0;
   box-sizing: border-box;
-} 
+}
+
 .banner {
   width: 100%;
   height: 53vw;
   display: block;
 }
 
-.content{
-  background-color:#f0f3f6
+.add-house {
+  /* margin-top: 10px; */
+  background-color: #f0f3f6 !important;
 }

@@ -2,11 +2,13 @@
   <!-- <view class="header"></view> -->
   <van-panel title="三亚湾" desc="尊敬的业主,感谢您的信任与支持！，您共有x套房产托管给了「向往的宿」平台。"></van-panel>
   <van-panel wx:for="{{houseList}}" wx:key="key" wx:for-item='item' status="{{item.status}}" custom-class="house-list" title="{{index+1}} : {{item.name}}">
-    <van-cell label="地址：{{item.address}} ; 户型：{{item.room_info}}" />
-    <van-cell wx:if="{{item.date_range}}" label="合同日期：{{item.date_range}}" />
+    <van-cell wx:if="{{item.room_info}}" label="地址：{{item.address}} ; 户型：{{item.room_info}}" />
+    <van-cell wx:else label="地址：{{item.address}}" />
+    <van-cell wx:if="{{item.date_range && item.img }}" label="合同日期：{{item.date_range}}" data-img="{{item.img}}" bind:click="previewImage" is-link />
+    <van-cell wx:elif="{{item.date_range}}" label="合同日期：{{item.date_range}}" />
     <van-cell wx:if="{{item.cost_info}}" label="合作模式：{{item.cost_info}}" />
   </van-panel>
-  <van-cell border="false">
-    <van-button type="primary" round block bind:click="addHouse">添加新房产</van-button>
+  <van-cell border="false" custom-class="add-house">
+    <van-button color="#0081c2" type="primary" round block bind:click="addHouse">添加新房产</van-button>
   </van-cell>
 </view>

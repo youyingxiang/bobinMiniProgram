@@ -75,7 +75,7 @@ const redirectTo = (url) => {
   if (!app.globalData.token) {
     url = '/pages/login/index';
   }
-  wx.redirectTo({
+  wx.navigateTo({
     url: url,
   })
 }
