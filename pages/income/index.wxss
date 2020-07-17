@@ -7,3 +7,8 @@
   .income-info{
       margin-top:10px;
   }
+
+  .collapse{
+      padding: 0 !important;
+      padding-left: 10px !important;
+  }

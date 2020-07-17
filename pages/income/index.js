@@ -19,6 +19,7 @@ Page({
     income: null,
     minDate: new Date(2008,10,1).getTime(),
     maxDate: new Date(2050, 10, 1).getTime(),
+   // activeName: '1',
   },
   onInput(event) {
     this.setData({
@@ -35,6 +36,11 @@ Page({
   },
   onCancel() {
     this.setData({ show: false });
+  },
+  onChange(event) {
+    this.setData({
+      activeName: event.detail,
+    });
   },
 
 
