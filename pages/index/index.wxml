@@ -1,19 +1,37 @@
 <view class="content">
   <view class="header">
-        <view wx:if="{{!hasUserInfo}}">
-            <navigator url="/pages/login/index">
-              <van-icon name="user-circle-o" color="#FFFFFF" size="50px"/> 
-              <view>登陆/注册</view>
-            </navigator>
-        </view>
-        <view wx:else>
-            <van-image width="50px" round height="50px" src="{{userInfo.avatar}}" />
-            <view>{{userInfo.name}}</view>
-        </view>
+    <view wx:if="{{!hasUserInfo}}">
+      <navigator url="/pages/login/index">
+        <van-icon name="user-circle-o" color="#FFFFFF" size="50px" />
+        <view>登陆/注册</view>
+      </navigator>
+    </view>
+    <view wx:else>
+      <van-image width="50px" round height="50px" src="{{userInfo.avatar}}" />
+      <view>{{userInfo.name}}</view>
+    </view>
   </view>
-  <van-cell-group>
-    <van-cell icon="add-o" open-type='getUserInfo'  title="添加房产" bind:click="addHouse" is-link/>
-    <van-cell icon="orders-o" title="房产列表" bind:click="houseList" is-link />
-    <van-cell icon="after-sale"  title="收益查询" bind:click="queryIncome"is-link />
-  </van-cell-group>
+  <view class="ad">
+    <van-grid border="{{false}}">
+      <van-grid-item icon="orders-o" text="我的房源" bind:click="houseList" />
+      <van-grid-item icon="after-sale" text="收益查询" bind:click="queryIncome" />
+      <van-grid-item icon="volume-o" text="敬请期待" />
+      <van-grid-item icon="phone-o" text="拨打手机" bind:click="call"/>
+    </van-grid>
+    <image class="banner" src="{{ 'http://cdn.bobin.com.cn/www/images/784f05592e404df7d6caee4aa8e69050.jpg' }}"></image>
+    <view class="know-we">
+      <van-button plain color="#0081c2" type="primary">了解铂宾</van-button>
+    </view>
+    <view class="bottom-content clearfix">
+      <view class="b-l-content">
+        <image class="bottom-img" src="http://pic.5tu.cn/uploads/allimg/201606/pic_5tu_thumb_201606171445086712.jpg"></image>
+      </view>
+      <view class="b-r-content">
+        <text class="">铂宾业主委托专线</text>
+        <view>提供业主委托咨询，为您安排小区管家</view>
+        <view>工作时间：每日9:00-21:00</view>
+        <van-icon size="20px" custom-style="margin-left:100px" name="phone-circle-o" bind:click="call"/>
+      </view>
+    </view>
+  </view>
 </view>

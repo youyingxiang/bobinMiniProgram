@@ -49,6 +49,12 @@ Page({
     } else {
       Logger.info(`fetchUserInfo 获取用户信息失败`);
     }
-  }
+  },
+  call: function () {
+    console.log("123");
+    wx.makePhoneCall({
+        phoneNumber: '1340000' //仅为示例，并非真实的电话号码
+    })
+},
 
 })
