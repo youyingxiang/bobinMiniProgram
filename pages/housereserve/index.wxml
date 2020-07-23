@@ -1,0 +1,19 @@
+<view class="content">
+    <!-- <view class="header"></view> -->
+    <form bindsubmit="addFormSubmit">
+        <van-cell-group>
+            <van-field required name="city" value="{{ city }}" label="城市" placeholder="请输入城市名称" />
+            <van-cell required name="start_time" value="{{ startTime }}" label="入住" placeholder="请选择入住时间" is-link bind:click="showPopup" />
+            <van-cell required name="end_time" value="{{ endTime }}" label="入住" placeholder="请选择入住时间" is-link bind:click="showPopup" />
+           
+            <van-popup show="{{ show }}" position="bottom" custom-style="height: 40%">
+                <van-datetime-picker type="date" value="{{ currentDate }}" min-date="{{ minDate }}" bind:input="onInput" bind:confirm="onConfirm" bind:cancel="onCancel" />
+            </van-popup>
+        </van-cell-group>
+        <van-cell border="false" custom-class="add-house">
+            <van-button color="#0081c2" type="primary" form-type="submit" disabled="{{disabled}}" round block>
+                预定房间
+            </van-button>
+        </van-cell>
+    </form>
+</view>

@@ -36,6 +36,9 @@ Page({
   queryIncome: function (e) {
     redirectTo('/pages/income/index')
   },
+  houseReserve:function(e) {
+    redirectTo('/pages/housereserve/index')
+  },
 
   fetchUserInfo: async function () {
     const { code, data, message } = await userServices.fetchUserInfo()

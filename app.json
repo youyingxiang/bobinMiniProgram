@@ -6,7 +6,8 @@
     "pages/houselist/index",
     "pages/income/index",
     "pages/notice/index",
-    "pages/login/index"
+    "pages/login/index",
+    "pages/housereserve/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

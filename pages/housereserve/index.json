@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "房间预定",
+  "usingComponents": {
+    "van-field": "@vant/weapp/field/index",
+    "van-panel": "@vant/weapp/panel/index",
+    "van-cell": "@vant/weapp/cell/index",
+    "van-datetime-picker": "@vant/weapp/datetime-picker/index",
+    "van-popup": "@vant/weapp/popup/index"
+  }
+}
