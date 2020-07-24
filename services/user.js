@@ -8,6 +8,8 @@ import {
   ADDHOUSE,
   HOUSELIST,
   INCOME,
+  USERRESERVE,
+  USERRESERVELIST
 } from '../path';
 
 /**
@@ -85,6 +87,34 @@ const fetchGetIncome = ({ date }) => {
     })
     .catch(error => request.error(error));
 };
+/**
+ * 
+ * @param 
+ */
+const fetchGetUserReserve = ({ city, start_time, end_time, num, other }) => {
+  return http
+    .post(USERRESERVE
+      , {
+        city,
+        start_time,
+        end_time,
+        num,
+        other
+      })
+    .then(({ data }) => {
+      return request.success(data);
+    })
+    .catch(error => request.error(error));
+}
+
+const fetchGetUserReserveList = () => {
+  return http
+    .get(USERRESERVELIST)
+    .then(({ data }) => {
+      return request.success(data);
+    })
+    .catch(error => request.error(error));
+};
 
 export {
   fetchOpenId,
@@ -93,4 +123,6 @@ export {
   fetchAddHouse,
   fetchGetHouseList,
   fetchGetIncome,
+  fetchGetUserReserve,
+  fetchGetUserReserveList,
 }

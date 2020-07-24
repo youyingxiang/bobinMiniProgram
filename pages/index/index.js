@@ -37,7 +37,7 @@ Page({
     redirectTo('/pages/income/index')
   },
   houseReserve:function(e) {
-    redirectTo('/pages/housereserve/index')
+    redirectTo('/pages/reservelist/index')
   },
 
   fetchUserInfo: async function () {

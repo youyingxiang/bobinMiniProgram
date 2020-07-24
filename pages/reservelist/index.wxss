@@ -1,0 +1,4 @@
+/* pages/reservelist/index.wxss */
+.house-list{
+    margin-top: 10px;
+}

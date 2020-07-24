@@ -1,0 +1,13 @@
+<view class="content">
+    <!-- <view class="header"></view> -->
+    <van-panel wx:for="{{userReverseList}}" wx:key="key" wx:for-item='item' status="{{item.status}}" title="预定城市：{{item.city}}" custom-class="house-list">
+        <van-cell label="入住时间：{{item.start_time}}" />
+        <van-cell label="离店时间：{{item.end_time}}" />
+        <van-cell wx:if="{{item.other}}" label="备注：{{item.other}}" />
+    </van-panel>
+    <van-cell border="false" custom-class="add-house">
+        <van-button color="#0081c2" type="primary" round block bind:click="userReverse">
+            房间预定
+        </van-button>
+    </van-cell>
+</view>
