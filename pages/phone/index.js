@@ -21,6 +21,7 @@ Page({
         const { phone } = data;
         app.globalData.phone = phone;
         wx.setStorageSync('phone', phone)
+        app.globalData.userInfo = null;
         wx.redirectTo({
           url: '/pages/index/index',
         })

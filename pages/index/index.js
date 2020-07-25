@@ -16,7 +16,10 @@ Page({
 
 
   onLoad: function () {
+    
+  },
 
+  onShow:function() {
     if (app.globalData.token && !app.globalData.userInfo) {
       this.fetchUserInfo();
     } else if (app.globalData.userInfo) {
@@ -36,7 +39,7 @@ Page({
   queryIncome: function (e) {
     redirectTo('/pages/income/index')
   },
-  houseReserve:function(e) {
+  houseReserve: function (e) {
     redirectTo('/pages/reservelist/index')
   },
 
@@ -44,6 +47,7 @@ Page({
     const { code, data, message } = await userServices.fetchUserInfo()
     if (code === 200) {
       app.globalData.userInfo = data
+      app.globalData.phone = data.phone
       console.log(app.globalData.userInfo)
       this.setData({
         userInfo: data,
@@ -53,11 +57,11 @@ Page({
       Logger.info(`fetchUserInfo 获取用户信息失败`);
     }
   },
+
   call: function () {
-    console.log("123");
     wx.makePhoneCall({
-        phoneNumber: '1340000' //仅为示例，并非真实的电话号码
+      phoneNumber: '1340000' //仅为示例，并非真实的电话号码
     })
-},
+  },
 
 })
