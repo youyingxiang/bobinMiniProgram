@@ -17,9 +17,9 @@ Page({
     show: false,
     currentYearMonth: formatTimeTwo(new Date(), "Y-M"),
     income: null,
-    minDate: new Date(2008,10,1).getTime(),
+    minDate: new Date(2008, 10, 1).getTime(),
     maxDate: new Date(2050, 10, 1).getTime(),
-   // activeName: '1',
+    // activeName: '1',
   },
   onInput(event) {
     this.setData({
@@ -48,11 +48,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getIncome(this.data.currentYearMonth)
+    // options.house_id
+    this.getIncome(this.data.currentYearMonth, options.house_id)
   },
 
-  getIncome: async function (date) {
-    const { code, data, message } = await userServices.fetchGetIncome({ date: date })
+  getIncome: async function (date, houseid) {
+    houseid = houseid ? houseid : 0;
+    const { code, data, message } = await userServices.fetchGetIncome({ date: date, houseid: houseid })
     if (code === 200) {
       this.setData({
         income: data

@@ -1,6 +1,6 @@
 <view class="content">
     <!-- <view class="header"></view> -->
-    <view wx:if="{{userReverseList}}">
+    <view wx:if="{{userReverseList.length!=0}}">
         <van-panel wx:for="{{userReverseList}}" wx:key="key" wx:for-item='item' custom-class="house-list">
             <van-cell title="入住时间：{{item.start_time}}" value="{{item.status}}" />
             <van-cell title="离店时间：{{item.end_time}}" />
@@ -8,14 +8,12 @@
             <van-cell wx:if="{{item.other}}" title="备注：{{item.other}}" />
         </van-panel>
     </view>
-    <view wx:elseif="{{userReverseList == null}}">
+    <view wx:else>
         <view class="empty">
             <view class="empty-view">
                 <image class="empty-img" src="https://img.yzcdn.cn/vant/custom-empty-image.png" />
             </view>
-            <view class="vempty-description">
-                暂无数据
-            </view>
+            <view class="vempty-description">暂无数据</view>
         </view>
     </view>
     <van-cell border="false" custom-class="add-house">

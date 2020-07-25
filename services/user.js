@@ -77,10 +77,11 @@ const fetchGetHouseList = () => {
     .catch(error => request.error(error));
 };
 
-const fetchGetIncome = ({ date }) => {
+const fetchGetIncome = ({ date, houseid }) => {
   return http
     .get(INCOME, {
-      date
+      date,
+      houseid
     })
     .then(({ data }) => {
       return request.success(data);

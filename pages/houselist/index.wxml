@@ -1,23 +1,33 @@
 <view class="content">
   <!-- <view class="header"></view> -->
-  <van-panel wx:for="{{houseList}}" wx:key="key" wx:for-item='item' status="{{item.status}}" custom-class="house-list" title="{{index+1}} : {{item.name}}">
-    <van-cell wx:if="{{item.room_info}}" label="地址：{{item.address}} ; 户型：{{item.room_info}}" />
-    <van-cell wx:else label="地址：{{item.address}}" />
-    <van-cell wx:if="{{item.date_range && item.img }}" label="合同日期：{{item.date_range}}" />
-    <van-cell wx:elif="{{item.date_range}}" label="合同日期：{{item.date_range}}" />
-    <van-cell wx:if="{{item.cost_info}}" label="合作模式：{{item.cost_info}}" />
-    <van-row>
-      <van-col span="6">
-        <van-cell data-img="{{item.img}}" label-class="a-text" label="合同下载" bind:click="previewImage" />
-      </van-col>
-      <van-col span="6">
-        <van-cell label-class="a-text" link-type="navigateTo" url="/pages/income/index" label="收益查询" />
-      </van-col>
-      <van-col span="6">
-        <van-cell label-class="a-text" label="门锁记录" />
-      </van-col>
-    </van-row>
-  </van-panel>
+  <view wx:if="{{houseList.length!=0}}">
+    <van-panel wx:for="{{houseList}}" wx:key="key" wx:for-item='item' status="{{item.status}}" custom-class="house-list" title="{{index+1}} : {{item.name}}">
+      <van-cell wx:if="{{item.room_info}}" label="地址：{{item.address}} ; 户型：{{item.room_info}}" />
+      <van-cell wx:else label="地址：{{item.address}}" />
+      <van-cell wx:if="{{item.date_range && item.img }}" label="合同日期：{{item.date_range}}" />
+      <van-cell wx:elif="{{item.date_range}}" label="合同日期：{{item.date_range}}" />
+      <van-cell wx:if="{{item.cost_info}}" label="合作模式：{{item.cost_info}}" />
+      <van-row>
+        <van-col span="6">
+          <van-cell wx:if="{{item.img}}" data-img="{{item.img}}" label-class="a-text" label="合同下载" bind:click="previewImage" />
+        </van-col>
+        <van-col span="6">
+          <van-cell label-class="a-text" link-type="navigateTo" url="/pages/income/index?house_id={{item.id}}" label="收益查询" />
+        </van-col>
+        <van-col span="6">
+          <van-cell label-class="a-text" label="门锁记录" />
+        </van-col>
+      </van-row>
+    </van-panel>
+  </view>
+  <view wx:else>
+    <view class="empty">
+      <view class="empty-view">
+        <image class="empty-img" src="https://img.yzcdn.cn/vant/custom-empty-image.png" />
+      </view>
+      <view class="vempty-description">暂无数据</view>
+    </view>
+  </view>
   <van-cell border="false" custom-class="add-house">
     <van-button color="#0081c2" type="primary" round block bind:click="addHouse">添加新房产</van-button>
   </van-cell>
