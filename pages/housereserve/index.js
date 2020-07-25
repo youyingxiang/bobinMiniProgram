@@ -52,6 +52,7 @@ Page({
     }
 
   },
+
   addFormSubmit: async function (e) {
     let _this = this;
     let values = e.detail.value;
@@ -65,11 +66,11 @@ Page({
       disabled: true
     });
     const { code, data, message } = await userServices.fetchGetUserReserve({
-      city:values.city,
-      start_time:values.start_time,
-      end_time:values.end_time,
-      num:values.num,
-      other:values.other
+      city: values.city,
+      start_time: values.start_time,
+      end_time: values.end_time,
+      num: values.num,
+      other: values.other
     })
     if (code == 200) {
       redirectTo('/pages/reservelist/index')

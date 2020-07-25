@@ -1,4 +1,22 @@
 /* pages/houselist/index.wxss */
-.house-list{
+
+.house-list {
     margin-top: 10px;
+}
+
+.grid {
+    padding: 0;
+}
+
+.a-text {
+    color: #1989fa !important;
+}
+.item{
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.item-content{
+    padding-top: 0px;
+    padding-bottom: 0px;
 }
