@@ -17,11 +17,14 @@
     </view>
   </view>
   <view class="ad">
-    <van-grid border="{{false}}">
+    <van-grid wx:if="{{userInfo.have_house>0}}" border="{{false}}">
       <van-grid-item icon="orders-o" text="我的房源" bind:click="houseList" />
       <van-grid-item icon="after-sale" text="收益查询" bind:click="queryIncome" />
       <van-grid-item icon="service-o" text="房间预定" bind:click="houseReserve" />
       <van-grid-item icon="phone-o" text="拨打手机" bind:click="call" />
+    </van-grid>
+    <van-grid column-num="1" border="{{false}}" wx:else>
+      <van-grid-item icon="orders-o" text="我的房源" bind:click="houseList" />
     </van-grid>
     <image class="banner" src="{{ 'http://cdn.bobin.com.cn/www/images/784f05592e404df7d6caee4aa8e69050.jpg' }}"></image>
     <view class="know-we">

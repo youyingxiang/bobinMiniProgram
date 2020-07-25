@@ -16,13 +16,12 @@ Page({
 
 
   onLoad: function () {
-    
+
   },
 
-  onShow:function() {
-    if (app.globalData.token && !app.globalData.userInfo) {
-      this.fetchUserInfo();
-    } else if (app.globalData.userInfo) {
+  onShow: function () {
+    this.fetchUserInfo();
+    if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
         hasUserInfo: true
