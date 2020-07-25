@@ -8,7 +8,8 @@
     "pages/notice/index",
     "pages/login/index",
     "pages/housereserve/index",
-    "pages/reservelist/index"
+    "pages/reservelist/index",
+    "pages/phone/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

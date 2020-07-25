@@ -1,0 +1,12 @@
+<view wx:if="{{canIUse}}">
+    <view class='headView'>
+        <view class='titleText'>申请获取以下权限</view>
+        <view class='contentText'>获得你的手机号码</view>
+        <van-cell border="false">
+            <van-button type="primary" open-type="getPhoneNumber" round block bind:getphonenumber="getPhoneNumber">
+                授权手机号
+            </van-button>
+        </van-cell>
+    </view>
+</view>
+<view wx:else>请升级微信版本</view>

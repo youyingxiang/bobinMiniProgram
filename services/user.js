@@ -9,7 +9,8 @@ import {
   HOUSELIST,
   INCOME,
   USERRESERVE,
-  USERRESERVELIST
+  USERRESERVELIST,
+  GETPHONE
 } from '../path';
 
 /**
@@ -117,6 +118,19 @@ const fetchGetUserReserveList = () => {
     .catch(error => request.error(error));
 };
 
+const fetchGetPhone = ({ encryptedData, iv }) => {
+  return http
+    .post(GETPHONE
+      , {
+        encryptedData,
+        iv,
+      })
+    .then(({ data }) => {
+      return request.success(data);
+    })
+    .catch(error => request.error(error));
+};
+
 export {
   fetchOpenId,
   fetchUserInfoByEcode,
@@ -126,4 +140,5 @@ export {
   fetchGetIncome,
   fetchGetUserReserve,
   fetchGetUserReserveList,
+  fetchGetPhone,
 }

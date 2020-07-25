@@ -20,7 +20,7 @@
     </van-grid>
     <image class="banner" src="{{ 'http://cdn.bobin.com.cn/www/images/784f05592e404df7d6caee4aa8e69050.jpg' }}"></image>
     <view class="know-we">
-      <van-button plain color="#0081c2" type="primary">了解铂宾</van-button>
+      <van-button plain color="#0081c2" bind:click="call" type="primary">了解铂宾</van-button>
     </view>
     <view class="bottom-content clearfix">
       <view class="b-l-content">
@@ -30,7 +30,6 @@
         <text class="">铂宾业主委托专线</text>
         <view>提供业主委托咨询，为您安排小区管家</view>
         <view>工作时间：每日9:00-21:00</view>
-        <van-icon size="20px" custom-style="margin-left:100px" name="phone-circle-o" bind:click="call"/>
       </view>
     </view>
   </view>

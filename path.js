@@ -14,3 +14,5 @@ export const INCOME = '/MiniProgram/income';
 export const USERRESERVE = '/MiniProgram/user-reserves';
 // 业主预约记录
 export const USERRESERVELIST = "/MiniProgram/user-reserve-list";
+// 手机号
+export const GETPHONE = "/MiniProgram/get-phone-number"; 

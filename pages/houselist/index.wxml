@@ -14,9 +14,9 @@
         <van-col span="6">
           <van-cell label-class="a-text" link-type="navigateTo" url="/pages/income/index?house_id={{item.id}}" label="收益查询" />
         </van-col>
-        <van-col span="6">
+        <!-- <van-col span="6">
           <van-cell label-class="a-text" label="门锁记录" />
-        </van-col>
+        </van-col> -->
       </van-row>
     </van-panel>
   </view>

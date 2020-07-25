@@ -1,7 +1,7 @@
 <view wx:if="{{canIUse}}">
     <view class='headView'>
         <view class='titleText'>申请获取以下权限</view>
-        <view class='contentText'>获得你的公开信息(昵称,头像,手机等)</view>
+        <view class='contentText'>获得你的公开信息(昵称,头像)</view>
          <van-cell border="false">
             <van-button type="primary"  round block open-type='getUserInfo' bind:getuserinfo="getuserinfo">
             授权登录

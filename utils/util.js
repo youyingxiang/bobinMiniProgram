@@ -75,6 +75,10 @@ const redirectTo = (url) => {
   if (!app.globalData.token) {
     url = '/pages/login/index';
   }
+  console.log(url);
+  if (url == '/pages/houselist/index' && !app.globalData.phone) {
+    url = '/pages/phone/index';
+  }
   wx.navigateTo({
     url: url,
   })
