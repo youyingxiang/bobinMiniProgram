@@ -31,7 +31,7 @@ Page({
                 const { token } = data;
                 app.globalData.token = token;
                 wx.setStorageSync('token', token)
-                wx.redirectTo({
+                wx.switchTab({
                     url: '/pages/index/index',
                 })
             } else {

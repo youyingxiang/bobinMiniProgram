@@ -9,7 +9,8 @@
     "pages/login/index",
     "pages/housereserve/index",
     "pages/reservelist/index",
-    "pages/phone/index"
+    "pages/phone/index",
+    "pages/home/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -20,5 +21,21 @@
   "sitemapLocation": "sitemap.json",
   "usingComponents": {
     "van-button": "@vant/weapp/button/index"
+  },
+  "tabBar": {
+    "custom": true,
+    "color": "#000000",
+    "selectedColor": "#000000",
+    "backgroundColor": "#000000",
+    "list": [
+      {
+        "pagePath": "pages/home/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "我的"
+      }
+    ]
   }
 }

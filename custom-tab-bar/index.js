@@ -6,13 +6,13 @@ Component({
 				name: 'home',
 				icon: 'home-o',
 				text: '首页',
-				url: '/pages/index/index'
+				url: '/pages/home/index'
 			},
 			{
 				name: 'msg',
-				icon: 'after-sale',
-				text: '业主须知',
-				url: '/pages/notice/index'
+				icon: 'user-circle-o',
+				text: '我的',
+				url: '/pages/index/index'
 			}
 		]
 	},

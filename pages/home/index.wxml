@@ -1,0 +1,2 @@
+<!--pages/home/index.wxml-->
+<web-view src="http://demo.bobin.com.cn/"></web-view>

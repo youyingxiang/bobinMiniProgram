@@ -120,22 +120,45 @@ const showSuccess = (msg) => {
   wx.showToast({
     title: msg,
     icon: 'success',
-    duration: 2000
+    duration: 5000
   })
 }
 const showError = (msg) => {
   wx.showToast({
     title: msg,
-    icon:"none",
+    icon: "none",
     duration: 2000
   })
 }
+
+const mathChangeDate = (date, method, days) => {
+  //method:'+' || '-'
+  //ios不解析带'-'的日期格式，要转成'/'，不然Nan，切记
+  var dateVal = date.replace(/-/g, '/');
+  var timestamp = Date.parse(dateVal);
+  if (method == '+') {
+    timestamp = timestamp + 24 * 60 * 60 * days * 1000;
+  } else if (method == '-') {
+    timestamp = timestamp - 24 * 60 * 60 * days * 1000;
+  }
+  return timestamp;
+}
+
+const getStorageFlash = (name) => {
+  let data = wx.getStorageSync(name);
+  wx.removeStorageSync(name)
+  return data
+}
+
+
 
 module.exports = {
   formatTime: formatTime,
   formatTimeTwo: formatTimeTwo,
   Permission: Permission,
   redirectTo: redirectTo,
-  showSuccess:showSuccess,
-  showError:showError
+  showSuccess: showSuccess,
+  showError: showError,
+  mathChangeDate: mathChangeDate,
+  getStorageFlash:getStorageFlash
 }

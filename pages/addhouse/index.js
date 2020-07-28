@@ -20,9 +20,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-      this.setData({
-        phone:app.globalData.phone,
-      })
+    this.setData({
+      phone: app.globalData.phone,
+    })
   },
 
   /**
@@ -85,13 +85,14 @@ Page({
     _this.setData({
       disabled: true
     });
-    const {code,data,message} = await userServices.fetchAddHouse({
-       housename:values.housename,
-       address:values.address,
-       phone:values.phone,
+    const { code, data, message } = await userServices.fetchAddHouse({
+      housename: values.housename,
+      address: values.address,
+      phone: values.phone,
     })
     if (code == 200) {
-        redirectTo('/pages/houselist/index')
+      wx.setStorageSync('addmsg', "添加成功！请等待3-5个工作日")
+      redirectTo('/pages/houselist/index')
     } else {
       Logger.info("房源添加失败！")
       showError("房源添加失败！")

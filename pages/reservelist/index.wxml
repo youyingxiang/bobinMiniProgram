@@ -22,3 +22,4 @@
         </van-button>
     </van-cell>
 </view>
+<van-toast id="van-toast" />

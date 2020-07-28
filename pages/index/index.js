@@ -20,6 +20,7 @@ Page({
   },
 
   onShow: function () {
+    this.getTabBar().init();
     this.fetchUserInfo();
     if (app.globalData.userInfo) {
       this.setData({
@@ -41,6 +42,7 @@ Page({
   houseReserve: function (e) {
     redirectTo('/pages/reservelist/index')
   },
+
 
   fetchUserInfo: async function () {
     const { code, data, message } = await userServices.fetchUserInfo()

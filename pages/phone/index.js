@@ -22,7 +22,7 @@ Page({
         app.globalData.phone = phone;
         wx.setStorageSync('phone', phone)
         app.globalData.userInfo = null;
-        wx.redirectTo({
+        wx.switchTab({
           url: '/pages/index/index',
         })
       } else {

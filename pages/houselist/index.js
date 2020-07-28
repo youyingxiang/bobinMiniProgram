@@ -2,7 +2,8 @@
 import regeneratorRuntime from '../../utils/regenerator-runtime';
 import * as userServices from '../../services/user';
 import Logger from "../../utils/logger";
-import { redirectTo, showSuccess, showError } from '../../utils/util';
+import Toast from '../../miniprogram_npm/@vant/weapp/toast/toast';
+import { redirectTo, showSuccess, showError, getStorageFlash } from '../../utils/util';
 // pages/addhouse/index.js
 const app = getApp();
 Page({
@@ -18,7 +19,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getHouseList();
+    this.getHouseList();    
+    let addmsg = getStorageFlash('addmsg')
+    if (addmsg) {
+      Toast.success(addmsg);
+    }
   },
   /**
    * @see 预览图片

@@ -3,7 +3,8 @@
 import regeneratorRuntime from '../../utils/regenerator-runtime';
 import * as userServices from '../../services/user';
 import Logger from "../../utils/logger";
-import { redirectTo, showSuccess, showError } from '../../utils/util';
+import Toast from '../../miniprogram_npm/@vant/weapp/toast/toast';
+import { redirectTo, showSuccess, showError, getStorageFlash } from '../../utils/util';
 // pages/addhouse/index.js
 const app = getApp();
 Page({
@@ -20,6 +21,10 @@ Page({
    */
   onLoad: function (options) {
     this.getUserReverseList();
+    let reservemsg = getStorageFlash('reservemsg')
+    if (reservemsg) {
+      Toast.success(reservemsg);
+    }
   },
 
   getUserReverseList: async function () {
