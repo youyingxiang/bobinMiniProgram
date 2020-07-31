@@ -38,7 +38,7 @@
         <text>铂宾业主委托专线</text>
         <view>提供业主委托咨询，为您安排小区管家</view>
         <view>工作时间：每日9:00-21:00</view>
-        <van-icon size="28px" name="phone-circle-o" bind:click="call"/>
+        <van-icon size="32px" name="phone-circle-o" bind:click="call"/>
       </view>
     </view>
   </view>
