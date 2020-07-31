@@ -17,27 +17,28 @@
     </view>
   </view>
   <view class="ad">
-    <van-grid wx:if="{{userInfo.have_house>0}}" border="{{false}}">
-      <van-grid-item icon="orders-o" text="我的房源" bind:click="houseList" />
-      <van-grid-item icon="after-sale" text="收益查询" bind:click="queryIncome" />
-      <van-grid-item icon="service-o" text="房间预定" bind:click="houseReserve" />
-      <van-grid-item icon="phone-o" text="拨打手机" bind:click="call" />
+    <van-grid class="nav" wx:if="{{userInfo.have_house>0}}" border="{{false}}">
+      <van-grid-item icon-color="#3e57a7" icon="orders-o" text="我的房源" bind:click="houseList" />
+      <van-grid-item icon-color="#3e57a7" icon="balance-list-o" text="收益查询" bind:click="queryIncome" />
+      <van-grid-item icon-color="#3e57a7" icon="todo-list-o" text="房间预定" bind:click="houseReserve" />
+      <van-grid-item icon-color="#3e57a7" icon="phone-o" text="联系客服" bind:click="call" />
     </van-grid>
-    <van-grid column-num="1" border="{{false}}" wx:else>
+    <van-grid class="nav" column-num="1" border="{{false}}" wx:else>
       <van-grid-item icon="orders-o" text="我的房源" bind:click="houseList" />
     </van-grid>
-    <image class="banner" src="{{ 'http://cdn.bobin.com.cn/www/images/784f05592e404df7d6caee4aa8e69050.jpg' }}"></image>
+    <image class="banner" src="/assets/images/banner.png"></image>
     <view class="know-we">
-      <van-button plain color="#0081c2" bind:click="call" type="primary">了解铂宾</van-button>
+      <van-button plain bind:click="call" type="primary">了解铂宾</van-button>
     </view>
     <view class="bottom-content clearfix">
       <view class="b-l-content">
         <image class="bottom-img" src="http://pic.5tu.cn/uploads/allimg/201606/pic_5tu_thumb_201606171445086712.jpg"></image>
       </view>
       <view class="b-r-content">
-        <text class="">铂宾业主委托专线</text>
+        <text>铂宾业主委托专线</text>
         <view>提供业主委托咨询，为您安排小区管家</view>
         <view>工作时间：每日9:00-21:00</view>
+        <van-icon size="28px" name="phone-circle-o" bind:click="call"/>
       </view>
     </view>
   </view>

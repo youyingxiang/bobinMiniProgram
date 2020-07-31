@@ -17,7 +17,7 @@
         </view>
     </view>
     <van-cell border="false" custom-class="add-house">
-        <van-button color="#0081c2" type="primary" round block bind:click="userReverse">
+        <van-button type="primary" round block bind:click="userReverse">
             房间预定
         </van-button>
     </van-cell>

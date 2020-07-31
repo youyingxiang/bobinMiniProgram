@@ -1,10 +1,16 @@
 /**app.wxss**/
-
 page {
   font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Segoe UI, Arial, Roboto, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft Yahei', sans-serif;
-  background-color: #f0f3f6
+  background-color: #f0f3f6;
+  --tabbar-item-active-color: #3e57a7;
+  --button-primary-border-color: #3e57a7;
+  --button-primary-background-color: #3e57a7;
 }
-
+.van-tabbar-item {
+  --tabbar-item-active-color: #3e57a7;
+  --button-primary-border-color: #3e57a7;
+  --button-primary-background-color: #3e57a7;
+}
 .container {
   height: 100%;
   display: flex;

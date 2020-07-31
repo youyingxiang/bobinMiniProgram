@@ -7,7 +7,7 @@
       <van-field required name="phone" value="{{ phone }}" label="您的电话" placeholder="请输入您的电话" />
     </van-cell-group>
     <van-cell border="false" custom-class="add-house">
-      <van-button color="#0081c2" type="primary" form-type="submit" disabled="{{disabled}}" round block>
+      <van-button type="primary" form-type="submit" disabled="{{disabled}}" round block>
         添加新房产
       </van-button>
     </van-cell>

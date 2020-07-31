@@ -29,7 +29,7 @@
     </view>
   </view>
   <van-cell border="false" custom-class="add-house">
-    <van-button color="#0081c2" type="primary" round block bind:click="addHouse">添加新房产</van-button>
+    <van-button type="primary" round block bind:click="addHouse">添加新房产</van-button>
   </van-cell>
 </view>
 <van-toast id="van-toast" />

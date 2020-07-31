@@ -12,7 +12,7 @@
             </van-popup>
         </van-cell-group>
         <van-cell border="false" custom-class="add-house">
-            <van-button color="#0081c2" type="primary" form-type="submit" disabled="{{disabled}}" round block>
+            <van-button type="primary" form-type="submit" disabled="{{disabled}}" round block>
                 预定房间
             </van-button>
         </van-cell>
