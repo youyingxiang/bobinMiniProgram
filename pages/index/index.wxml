@@ -26,13 +26,13 @@
     <van-grid class="nav" column-num="1" border="{{false}}" wx:else>
       <van-grid-item icon="orders-o" text="我的房源" bind:click="houseList" />
     </van-grid>
-    <image class="banner" src="/assets/images/banner.png"></image>
+    <image class="banner" src="http://cdn.bobin.com.cn/www/images/e9e21fb83c58f51282a563d874e54695.png"></image>
     <view class="know-we">
       <van-button plain bind:click="call" type="primary">了解铂宾</van-button>
     </view>
     <view class="bottom-content clearfix">
       <view class="b-l-content">
-        <image class="bottom-img" src="http://pic.5tu.cn/uploads/allimg/201606/pic_5tu_thumb_201606171445086712.jpg"></image>
+        <image class="bottom-img" src="http://cdn.bobin.com.cn/www/images/250029baeb36acc735e51d8008a26ad2.jpg"></image>
       </view>
       <view class="b-r-content">
         <text>铂宾业主委托专线</text>
