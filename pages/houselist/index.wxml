@@ -7,7 +7,7 @@
       <van-cell wx:if="{{item.date_range && item.img }}" label="合同日期：{{item.date_range}}" />
       <van-cell wx:elif="{{item.date_range}}" label="合同日期：{{item.date_range}}" />
       <van-cell wx:if="{{item.cost_info}}" label="合作模式：{{item.cost_info}}" />
-      <van-row>
+      <van-row wx:if="{{item.status_id}}">
         <van-col span="6">
           <van-cell wx:if="{{item.img}}" data-img="{{item.img}}" label-class="a-text" label="合同下载" bind:click="previewImage" />
         </van-col>

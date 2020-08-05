@@ -2,8 +2,10 @@
   <!-- <view class="header"></view> -->
   <form bindsubmit="addFormSubmit">
     <van-cell-group>
-      <van-field required name="housename" value="{{ housename }}" label="房源名称" placeholder="请输入房源名称" />
-      <van-field required name="address" value="{{ address }}" label="房源地址" placeholder="请输入房源地址" />
+      <van-cell title="展示弹出层" is-link bind:click="showCityPopup" />
+      <van-field required name="housename" value="{{ housename }}" label="小区名称" placeholder="请输入房源所在小区名称" />
+      <van-field required name="number" value="{{ number }}" label="房号" placeholder="请输入房号，如：2栋307" />
+      <van-field required name="address" value="{{ address }}" label="详细地址" placeholder="请输入小区详细地址" />
       <van-field required name="phone" value="{{ phone }}" label="您的电话" placeholder="请输入您的电话" />
     </van-cell-group>
     <van-cell border="false" custom-class="add-house">
