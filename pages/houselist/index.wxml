@@ -1,9 +1,10 @@
 <view class="content">
   <!-- <view class="header"></view> -->
   <view wx:if="{{houseList.length!=0}}">
-    <van-panel wx:for="{{houseList}}" wx:key="key" wx:for-item='item' status="{{item.status}}" custom-class="house-list" title="{{index+1}} : {{item.name}}">
-      <van-cell wx:if="{{item.room_info}}" label="地址：{{item.address}} ; 户型：{{item.room_info}}" />
+    <van-panel wx:for="{{houseList}}" wx:key="key" wx:for-item='item' status="{{item.status}}" custom-class="house-list" title="{{index+1}} : {{item.display_name}}">
+      <van-cell wx:if="{{item.room_info}}" label="地址：{{item.address}}" />
       <van-cell wx:else label="地址：{{item.address}}" />
+      <van-cell wx:if="{{item.room_info}}" label="户型：{{item.room_info}}" />
       <van-cell wx:if="{{item.date_range && item.img }}" label="合同日期：{{item.date_range}}" />
       <van-cell wx:elif="{{item.date_range}}" label="合同日期：{{item.date_range}}" />
       <van-cell wx:if="{{item.cost_info}}" label="合作模式：{{item.cost_info}}" />
@@ -21,12 +22,7 @@
     </van-panel>
   </view>
   <view wx:else>
-    <view class="empty">
-      <view class="empty-view">
-        <image class="empty-img" src="https://img.yzcdn.cn/vant/custom-empty-image.png" />
-      </view>
-      <view class="vempty-description">暂无数据</view>
-    </view>
+    <van-empty description="暂无房源数据" />
   </view>
   <van-cell border="false" custom-class="add-house">
     <van-button type="primary" round block bind:click="addHouse">添加新房产</van-button>

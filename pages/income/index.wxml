@@ -1,6 +1,9 @@
 <!-- <image class="banner" src="{{ 'http://cdn.bobin.com.cn/www/images/784f05592e404df7d6caee4aa8e69050.jpg' }}"></image> -->
 <view class="content">
-  <van-panel title="您共有{{income.house_num|0}}处房产{{income.room_num|0}}间房" desc="积累总收入">
+  <van-panel title="{{ house.display_name }}" desc="积累总收入" wx:if="{{ houseId }}">
+    <van-cell title-class="income-title" title="¥ {{income.income|0}}元" />
+  </van-panel>
+  <van-panel title="您共有{{income.house_num|0}}处房产{{income.room_num|0}}间房" desc="积累总收入" wx:else>
     <van-cell title-class="income-title" title="¥ {{income.income|0}}元" />
   </van-panel>
   <!-- 自定义图标 -->

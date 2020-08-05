@@ -9,17 +9,13 @@
         </van-panel>
     </view>
     <view wx:else>
-        <view class="empty">
-            <view class="empty-view">
-                <image class="empty-img" src="https://img.yzcdn.cn/vant/custom-empty-image.png" />
-            </view>
-            <view class="vempty-description">暂无数据</view>
-        </view>
+        <van-empty description="暂无预约记录" />
     </view>
     <van-cell border="false" custom-class="add-house">
         <van-button type="primary" round block bind:click="userReverse">
             房间预定
         </van-button>
+        <text class="button-tip">您的『免费入住』天数还剩：<text class="highlight">{{ userInfo.free_day }}</text> 天</text>
     </van-cell>
 </view>
 <van-toast id="van-toast" />

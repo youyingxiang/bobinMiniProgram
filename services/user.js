@@ -7,15 +7,16 @@ import {
   GETUSERINFO,
   ADDHOUSE,
   HOUSELIST,
+  HOUSE,
   INCOME,
   USERRESERVE,
   USERRESERVELIST,
-  GETPHONE
+  GETPHONE,
 } from '../path';
 
 /**
  * @see 获取opnid
- * @param {*} code 
+ * @param {*} code
  */
 const fetchOpenId = (code) => {
   return http
@@ -23,15 +24,14 @@ const fetchOpenId = (code) => {
       code: code,
     })
     .then(({ data }) => {
-      return request.success(data)
+      return request.success(data);
     })
-    .catch(error => request.error(error));
+    .catch((error) => request.error(error));
 };
-
 
 /**
  * @see 解密用户信息
- * @param {*} param0 
+ * @param {*} param0
  */
 const fetchUserInfoByEcode = ({ encryptedData, iv }) => {
   return http
@@ -42,7 +42,7 @@ const fetchUserInfoByEcode = ({ encryptedData, iv }) => {
     .then(({ data }) => {
       return request.success(data);
     })
-    .catch(error => request.error(error));
+    .catch((error) => request.error(error));
 };
 /**
  * @see 获取用户信息
@@ -53,7 +53,7 @@ const fetchUserInfo = () => {
     .then(({ data }) => {
       return request.success(data);
     })
-    .catch(error => request.error(error));
+    .catch((error) => request.error(error));
 };
 
 const fetchAddHouse = ({ housename, address, phone }) => {
@@ -61,12 +61,12 @@ const fetchAddHouse = ({ housename, address, phone }) => {
     .post(ADDHOUSE, {
       housename,
       address,
-      phone
+      phone,
     })
     .then(({ data }) => {
       return request.success(data);
     })
-    .catch(error => request.error(error));
+    .catch((error) => request.error(error));
 };
 
 const fetchGetHouseList = () => {
@@ -75,39 +75,49 @@ const fetchGetHouseList = () => {
     .then(({ data }) => {
       return request.success(data);
     })
-    .catch(error => request.error(error));
+    .catch((error) => request.error(error));
 };
 
 const fetchGetIncome = ({ date, houseid }) => {
   return http
     .get(INCOME, {
       date,
-      houseid
+      houseid,
     })
     .then(({ data }) => {
       return request.success(data);
     })
-    .catch(error => request.error(error));
+    .catch((error) => request.error(error));
+};
+
+const fetchGetHouse = ({ houseid }) => {
+  return http
+    .get(HOUSE, {
+      houseid,
+    })
+    .then(({ data }) => {
+      return request.success(data);
+    })
+    .catch((error) => request.error(error));
 };
 /**
- * 
- * @param 
+ *
+ * @param
  */
 const fetchGetUserReserve = ({ city, start_time, end_time, num, other }) => {
   return http
-    .post(USERRESERVE
-      , {
-        city,
-        start_time,
-        end_time,
-        num,
-        other
-      })
+    .post(USERRESERVE, {
+      city,
+      start_time,
+      end_time,
+      num,
+      other,
+    })
     .then(({ data }) => {
       return request.success(data);
     })
-    .catch(error => request.error(error));
-}
+    .catch((error) => request.error(error));
+};
 
 const fetchGetUserReserveList = () => {
   return http
@@ -115,20 +125,19 @@ const fetchGetUserReserveList = () => {
     .then(({ data }) => {
       return request.success(data);
     })
-    .catch(error => request.error(error));
+    .catch((error) => request.error(error));
 };
 
 const fetchGetPhone = ({ encryptedData, iv }) => {
   return http
-    .post(GETPHONE
-      , {
-        encryptedData,
-        iv,
-      })
+    .post(GETPHONE, {
+      encryptedData,
+      iv,
+    })
     .then(({ data }) => {
       return request.success(data);
     })
-    .catch(error => request.error(error));
+    .catch((error) => request.error(error));
 };
 
 export {
@@ -136,9 +145,10 @@ export {
   fetchUserInfoByEcode,
   fetchUserInfo,
   fetchAddHouse,
+  fetchGetHouse,
   fetchGetHouseList,
   fetchGetIncome,
   fetchGetUserReserve,
   fetchGetUserReserveList,
   fetchGetPhone,
-}
+};

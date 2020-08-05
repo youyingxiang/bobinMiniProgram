@@ -54,3 +54,15 @@ page {
   font-size: 14px;
   line-height: 20px;
 }
+.button-tip {
+  text-align: center;
+  color: #999;
+  font-size: 0.857142857em;
+  margin: 10px auto;
+  display: block;
+
+}
+
+.button-tip .highlight {
+  color: red;
+}
