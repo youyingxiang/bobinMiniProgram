@@ -20,7 +20,7 @@
     <van-grid class="nav" wx:if="{{userInfo.is_owner}}" border="{{false}}">
       <van-grid-item icon-color="#3e57a7" icon="orders-o" text="我的合同" bind:click="houseList" />
       <van-grid-item icon-color="#3e57a7" icon="balance-list-o" text="收益查询" bind:click="queryIncome" />
-      <van-grid-item icon-color="#3e57a7" icon="todo-list-o" text="房间预定" bind:click="houseReserve" />
+      <van-grid-item icon-color="#3e57a7" icon="todo-list-o" text="免费入住" bind:click="houseReserve" />
       <van-grid-item icon-color="#3e57a7" icon="phone-o" text="联系客服" bind:click="call" />
     </van-grid>
     <van-grid class="nav" column-num="1" border="{{false}}" wx:else>
