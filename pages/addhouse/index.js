@@ -88,8 +88,8 @@ Page({
       wx.setStorageSync('addmsg', '添加成功！请等待3-5个工作日');
       redirectTo('/pages/houselist/index');
     } else {
-      Logger.info('房源添加失败！');
-      showError('房源添加失败！');
+      Logger.info('房产添加失败！');
+      showError('房产添加失败！');
     }
   },
   // showCityPopup: function() {

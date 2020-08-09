@@ -2,7 +2,7 @@
   <!-- <view class="header"></view> -->
   <view wx:if="{{houseList.length!=0}}">
     <van-panel wx:for="{{houseList}}" wx:key="key" wx:for-item='item' status="{{item.status}}" custom-class="house-list" title="{{index+1}} : {{item.display_name}}">
-      <van-cell wx:if="{{item.code}}" label="编号" />
+      <van-cell wx:if="{{item.code}}" label="房产编号：{{item.code}}" />
       <van-cell wx:if="{{item.room_info}}" label="地址：{{item.address}}" />
       <van-cell wx:else label="地址：{{item.address}}" />
       <van-cell wx:if="{{item.room_info}}" label="户型：{{item.room_info}}" />
@@ -23,7 +23,7 @@
     </van-panel>
   </view>
   <view wx:else>
-    <van-empty description="暂无房源数据" />
+    <van-empty description="暂无房产数据" />
   </view>
   <van-cell border="false" custom-class="add-house">
     <van-button type="primary" round block bind:click="addHouse">添加新房产</van-button>

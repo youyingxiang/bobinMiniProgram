@@ -4,13 +4,13 @@ export const AUTHORIZATIONCODE = '/MiniProgram/authorization-code';
 export const GETUSERINFOBYECODE = '/MiniProgram/get-userinfo/ecode';
 // 获取用户信息
 export const GETUSERINFO = '/MiniProgram/get-userinfo';
-// 增加房源
+// 增加房产
 export const ADDHOUSE = '/MiniProgram/add-house';
-// 获取房源列表
+// 获取房产列表
 export const HOUSELIST = '/MiniProgram/house-list';
 // 获取我的收益
 export const INCOME = '/MiniProgram/income';
-// 获取房源信息
+// 获取房产信息
 export const HOUSE = '/MiniProgram/house';
 // 业主预约
 export const USERRESERVE = '/MiniProgram/user-reserves';

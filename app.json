@@ -10,7 +10,8 @@
     "pages/housereserve/index",
     "pages/reservelist/index",
     "pages/phone/index",
-    "pages/home/index"
+    "pages/home/index",
+    "pages/home_redirect/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -30,7 +31,7 @@
     "backgroundColor": "#000000",
     "list": [
       {
-        "pagePath": "pages/home/index",
+        "pagePath": "pages/home_redirect/index",
         "text": "首页"
       },
       {
@@ -38,5 +39,11 @@
         "text": "我的"
       }
     ]
+  },
+  "plugins": {
+    "tucao": {
+      "version": "1.1.5",
+      "provider": "wx8abaf00ee8c3202e"
+    }
   }
 }

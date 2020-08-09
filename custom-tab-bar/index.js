@@ -6,7 +6,7 @@ Component({
         name: 'home',
         icon: 'wap-home-o',
         text: '首页',
-        url: '/pages/home/index',
+        url: '/pages/home_redirect/index',
       },
       {
         name: 'msg',

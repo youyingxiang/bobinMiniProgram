@@ -1,4 +1,4 @@
-// pages/home/index.js
+// pages/home_redirect/index.js
 var app = getApp();
 Page({
   /**
@@ -20,8 +20,16 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-    app.data.webviewIsShowed = true; // 修改webviewIsShowed的值，标记已经显示过web-view页了
-    console.log('213213');
+    if (!app.data.webviewIsShowed) {
+      wx.navigateTo({
+        url: '/pages/home/index',
+      });
+    } else {
+      wx.switchTab({
+        url: '/pages/index/index',
+      });
+    }
+    // this.getTabBar().init();
   },
 
   /**

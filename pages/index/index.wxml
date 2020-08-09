@@ -18,17 +18,17 @@
   </view>
   <view class="ad">
     <van-grid class="nav" wx:if="{{userInfo.is_owner}}" border="{{false}}">
-      <van-grid-item icon-color="#3e57a7" icon="orders-o" text="我的合同" bind:click="houseList" />
+      <van-grid-item icon-color="#3e57a7" icon="orders-o" text="我的房产" bind:click="houseList" />
       <van-grid-item icon-color="#3e57a7" icon="balance-list-o" text="收益查询" bind:click="queryIncome" />
       <van-grid-item icon-color="#3e57a7" icon="todo-list-o" text="免费入住" bind:click="houseReserve" />
       <van-grid-item icon-color="#3e57a7" icon="phone-o" text="联系客服" bind:click="call" />
     </van-grid>
     <van-grid class="nav" column-num="1" border="{{false}}" wx:else>
-      <van-grid-item icon="orders-o" text="我的房源" bind:click="houseList" />
+      <van-grid-item icon="orders-o" text="我的房产" bind:click="houseList" />
     </van-grid>
     <image class="banner" src="http://cdn.bobin.com.cn/www/images/e9e21fb83c58f51282a563d874e54695.png"></image>
     <view class="know-we">
-      <van-button plain bind:click="call" type="primary">了解铂宾</van-button>
+      <van-button plain bind:click="goToHelpCenter" type="primary">了解铂宾</van-button>
     </view>
     <view class="bottom-content clearfix">
       <view class="b-l-content">
