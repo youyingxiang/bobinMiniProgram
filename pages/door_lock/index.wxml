@@ -1,0 +1,20 @@
+<van-cell title="门锁记录" title-style="color:rgba(69, 90, 100, 0.6)" />
+<van-cell value="{{ currentYearMonth }}" readonly title="选择时间" is-link bind:click="showPopup" />
+<van-popup show="{{ show }}" position="bottom" custom-style="height: 40%">
+    <van-datetime-picker type="year-month" value="{{ currentDate }}" min-date="{{ minDate }}" bind:input="onInput" bind:confirm="onConfirm" bind:cancel="onCancel" />
+</van-popup>
+<van-grid column-num="3" >
+    <van-grid-item use-slot><view class="grid-th">房产</view></van-grid-item>
+    <van-grid-item use-slot><view class="grid-th">开锁方式</view></van-grid-item>
+    <van-grid-item use-slot><view class="grid-th">开锁时间</view></van-grid-item>
+</van-grid>
+<view wx:if="{{doorLockList.length!=0}}">
+    <van-grid column-num="3"  wx:for="{{doorLockList}}" wx:key="key" wx:for-item='item'>
+        <van-grid-item use-slot><view class="grid-tr clearfix">{{item.house_name}}</view></van-grid-item>
+        <van-grid-item use-slot><view class="grid-tr clearfix">{{item.door_lock_type}}</view></van-grid-item>
+        <van-grid-item use-slot><view class="grid-tr clearfix">{{item.created_at}}</view></van-grid-item>
+    </van-grid>
+</view>
+<view wx:else>
+    <van-empty description="暂无门锁记录" />
+</view>

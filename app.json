@@ -12,7 +12,8 @@
     "pages/phone/index",
     "pages/home/index",
     "pages/home_redirect/index",
-    "pages/reserve_detail/index"
+    "pages/reserve_detail/index",
+    "pages/door_lock/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

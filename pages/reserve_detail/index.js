@@ -57,7 +57,7 @@ Page({
   },
 
   getReserveDetail: async function (date, houseid) {
-    houseid = houseid ? houseid : 0;
+    houseid = houseid ? houseid : this.data.houseId;
     const { code, data, message } = await userServices.fetchGetReserveDetail({
       date: date,
       houseid: houseid,

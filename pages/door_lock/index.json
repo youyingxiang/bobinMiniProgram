@@ -1,0 +1,12 @@
+{
+  "navigationBarTitleText": "门锁记录",
+  "usingComponents": {
+    "van-cell": "@vant/weapp/cell/index",
+    "van-grid": "@vant/weapp/grid/index",
+    "van-datetime-picker": "@vant/weapp/datetime-picker/index",
+    "van-popup": "@vant/weapp/popup/index",
+    "van-grid-item": "@vant/weapp/grid-item/index",
+    "van-row": "@vant/weapp/row/index",
+    "van-col": "@vant/weapp/col/index"
+  }
+}

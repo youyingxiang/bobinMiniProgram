@@ -13,6 +13,7 @@ import {
   USERRESERVELIST,
   GETPHONE,
   GETRESERVEDETAIL,
+  GETDOORLOCKLIST,
 } from '../path';
 
 /**
@@ -153,6 +154,20 @@ const fetchGetReserveDetail = ({ date, houseid }) => {
     .catch((error) => request.error(error));
 };
 
+const fetchGetDoorLockList = ({ date, houseid }) => {
+  return http
+    .get(GETDOORLOCKLIST
+      , {
+        date,
+        houseid,
+      })
+    .then(({ data }) => {
+      return request.success(data);
+    })
+    .catch((error) => request.error(error));
+};
+
+
 export {
   fetchOpenId,
   fetchUserInfoByEcode,
@@ -164,5 +179,6 @@ export {
   fetchGetUserReserve,
   fetchGetUserReserveList,
   fetchGetPhone,
-  fetchGetReserveDetail
+  fetchGetReserveDetail,
+  fetchGetDoorLockList
 };
