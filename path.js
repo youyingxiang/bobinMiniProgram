@@ -18,3 +18,5 @@ export const USERRESERVE = '/MiniProgram/user-reserves';
 export const USERRESERVELIST = '/MiniProgram/user-reserve-list';
 // 手机号
 export const GETPHONE = '/MiniProgram/get-phone-number';
+// 获取预约情况详情
+export const GETRESERVEDETAIL = '/MiniProgram/reserve-detail';
