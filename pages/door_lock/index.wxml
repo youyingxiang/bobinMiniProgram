@@ -1,4 +1,4 @@
-<van-cell title="门锁记录" title-style="color:rgba(69, 90, 100, 0.6)" />
+<!-- <van-cell title="门锁记录" title-style="color:rgba(69, 90, 100, 0.6)" /> -->
 <van-cell value="{{ currentYearMonth }}" readonly title="选择时间" is-link bind:click="showPopup" />
 <van-popup show="{{ show }}" position="bottom" custom-style="height: 40%">
     <van-datetime-picker type="year-month" value="{{ currentDate }}" min-date="{{ minDate }}" bind:input="onInput" bind:confirm="onConfirm" bind:cancel="onCancel" />
