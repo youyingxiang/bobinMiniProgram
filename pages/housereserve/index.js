@@ -57,7 +57,11 @@ Page({
       currentDate: this.data.currentDate,
     });
   },
-
+  onNumChange(event) {
+    this.setData({
+      num: event.detail,
+    });
+  },
   onConfirm(event) {
     //this.getIncome(formatTimeTwo(event.detail, "Y-M-D"))
     this.setData({ show: false });
@@ -115,7 +119,6 @@ Page({
 
   validation: function(values) {
     values.num = this.data.num;
-    console.log(values);
     if (values.start_time.length < 1) {
       this.data.error = '入住时间不能为空！';
       return false;
