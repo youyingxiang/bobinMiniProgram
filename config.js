@@ -1,1 +1,1 @@
-export const BASE_URL = 'http://wxapi.bobin.com.cn'; // pro
+export const BASE_URL = 'https://wxapi.bobin.com.cn'; // pro
