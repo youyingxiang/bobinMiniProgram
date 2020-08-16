@@ -25,6 +25,7 @@ Page({
         url: '/pages/home/index',
       });
     } else {
+      app.data.webviewIsShowed = false;
       wx.switchTab({
         url: '/pages/index/index',
       });

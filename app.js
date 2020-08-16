@@ -7,7 +7,6 @@ App({
   },
   onHide() {
     this.data.webviewIsShowed = false;
-    Logger.info('阿斯顿撒旦');
   },
   onLaunch: function() {
     this.globalData.token = wx.getStorageSync('token');

@@ -2,11 +2,13 @@
     <!-- <view class="header"></view> -->
     <form bindsubmit="addFormSubmit">
         <van-cell-group>
-            <van-field required disabled name="start_time" data-name="start_time" input-align="right" value="{{ startTime }}" label="入住时间" placeholder="请选择入住时间" bindtap="showPopup" />
-            <van-field required disabled name="end_time" data-name="end_time" input-align="right" value="{{ endTime }}" label="离店时间" placeholder="离店时间" bindtap="showPopup" />
-            <van-field required name="city" input-align="right" value="{{ city }}" label="城市" placeholder="请输入城市名称" />
-            <van-field required name="num" input-align="right" type="number" value="{{ num }}" type="number" label="预定房间数量" placeholder="请输入预定房间数量" />
-            <van-field required name="other" input-align="right" type="textarea" value="{{ num }}" label="备注" placeholder="请输入备注" />
+            <van-field required name="start_time" data-name="start_time" input-align="right" value="{{ startTime }}" label="入住时间" placeholder="请选择入住时间" bindtap="showPopup" />
+            <van-field required name="end_time" data-name="end_time" input-align="right" value="{{ endTime }}" label="离店时间" placeholder="离店时间" bindtap="showPopup" />
+            <van-field required name="city" input-align="right" value="{{ city }}" label="预定城市" placeholder="请输入城市名称" />
+            <van-cell title="预定房间数量（间）">
+                <van-stepper required name="num" value="{{ num }}" min="1" max="20" integer />
+            </van-cell>
+            <van-field name="memo" input-align="right" type="textarea" value="{{ memo }}" label="预定备注" placeholder="请输入备注" />
             <van-popup show="{{ show }}" position="bottom" custom-style="height: 40%">
                 <van-datetime-picker data-name="{{ clickName }}" type="date" value="{{ currentDate }}" min-date="{{ minDate }}" bind:input="onInput" bind:confirm="onConfirm" bind:cancel="onCancel" />
             </van-popup>

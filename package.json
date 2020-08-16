@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "@vant/weapp": "^1.4.2",
+    "miniprogram-computed": "^2.1.1",
     "regenerator": "^0.14.5"
   }
 }

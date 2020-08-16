@@ -21,7 +21,6 @@ Page({
    */
   onShow: function() {
     app.data.webviewIsShowed = true; // 修改webviewIsShowed的值，标记已经显示过web-view页了
-    console.log('213213');
   },
 
   /**

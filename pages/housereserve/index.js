@@ -19,8 +19,13 @@ Page({
     maxDate: new Date(2050, 10, 1).getTime(),
     currentDate: new Date().getTime(),
     startTime: formatTimeTwo(new Date().getTime(), 'Y-M-D'),
-    endTime: formatTimeTwo(new Date().getTime(), 'Y-M-D'),
+    endTime: mathChangeDate(
+      formatTimeTwo(new Date().getTime(), 'Y-M-D'),
+      '+',
+      1
+    ),
     clickName: null,
+    num: 1,
   },
 
   /**
@@ -84,7 +89,6 @@ Page({
   addFormSubmit: async function(e) {
     let _this = this;
     let values = e.detail.value;
-    console.log(values);
     if (!_this.validation(values)) {
       showError(_this.data.error);
       return false;
@@ -98,7 +102,7 @@ Page({
       start_time: values.start_time,
       end_time: values.end_time,
       num: values.num,
-      other: values.other,
+      memo: values.memo,
     });
     if (code == 200) {
       wx.setStorageSync('reservemsg', '预约成功！请等待3-5个工作日');
@@ -110,10 +114,8 @@ Page({
   },
 
   validation: function(values) {
-    if (values.city.length < 1) {
-      this.data.error = '城市名称不能为空';
-      return false;
-    }
+    values.num = this.data.num;
+    console.log(values);
     if (values.start_time.length < 1) {
       this.data.error = '入住时间不能为空！';
       return false;
@@ -122,14 +124,18 @@ Page({
       this.data.error = '离店时间不能为空！';
       return false;
     }
+    if (values.city.length < 1) {
+      this.data.error = '城市名称不能为空';
+      return false;
+    }
     if (values.num.length < 1) {
       this.data.error = '预定房间数量不能为空！';
       return false;
     }
-    if (values.other.length < 1) {
-      this.data.error = '备注不能为空！';
-      return false;
-    }
+    // if (values.memo.length < 1) {
+    //   this.data.error = '备注不能为空！';
+    //   return false;
+    // }
     if (
       mathChangeDate(values.start_time, '+', 1) >
       mathChangeDate(values.end_time, '+', 1)

@@ -2,10 +2,14 @@
     <!-- <view class="header"></view> -->
     <view wx:if="{{userReverseList.length!=0}}">
         <van-panel wx:for="{{userReverseList}}" wx:key="key" wx:for-item='item' custom-class="house-list">
-            <van-cell title="入住时间：{{item.start_time}}" value="{{item.status}}" />
-            <van-cell title="离店时间：{{item.end_time}}" />
-            <van-cell title="预定城市：{{item.city}}" />
-            <van-cell wx:if="{{item.other}}" title="备注：{{item.other}}" />
+            <van-cell title="入住时间：{{ item.start_time }}" value="{{ item.status_text }}" />
+            <van-cell title="离店时间：{{ item.end_time }}" />
+            <van-cell title="预定城市：{{ item.city }}" />
+            <van-cell wx:if="{{ item.memo }}" title="预定备注：{{ item.memo }}" />
+            <van-cell wx:if="{{ item.status }}" title="审核结果：{{ item.result || '-' }}" />
+            <van-cell wx:if="{{ item.checkin_status }}" title="入住状态：{{ item.checkin_status_text }}" />
+            <van-cell wx:if="{{ item.checkin_status }}" title="入住备注：{{ item.checkin_memo || '-' }}" />
+            <van-cell wx:if="{{ item.checkout_memo }}" title="离店备注：{{ item.checkout_memo }}" />
         </van-panel>
     </view>
     <view wx:else>
@@ -15,7 +19,8 @@
         <van-button type="primary" round block bind:click="userReverse">
             房间预定
         </van-button>
-        <text class="button-tip">您的『免费入住』天数还剩：<text class="highlight">{{ userInfo.free_day }}</text> 天</text>
+        <van-divider hairline contentPosition="center" customStyle="color: var(--button-primary-background-color,#07c160); border-color: var(--button-primary-background-color,#07c160); font-size: 14px;">您的『免费入住』余额情况</van-divider>
+        <text class="button-tip" wx:for="{{ freeDayList }}"  wx:key="key" wx:for-item="item">『{{ item.display_name }}』的合同中免费入住额度剩余: <text class="highlight">{{ item.free_day }}</text> 天</text>
     </van-cell>
 </view>
 <van-toast id="van-toast" />

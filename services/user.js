@@ -11,6 +11,7 @@ import {
   INCOME,
   USERRESERVE,
   USERRESERVELIST,
+  FREEDAYLIST,
   GETPHONE,
 } from '../path';
 
@@ -104,14 +105,14 @@ const fetchGetHouse = ({ houseid }) => {
  *
  * @param
  */
-const fetchGetUserReserve = ({ city, start_time, end_time, num, other }) => {
+const fetchGetUserReserve = ({ city, start_time, end_time, num, memo }) => {
   return http
     .post(USERRESERVE, {
       city,
       start_time,
       end_time,
       num,
-      other,
+      memo,
     })
     .then(({ data }) => {
       return request.success(data);
@@ -122,6 +123,15 @@ const fetchGetUserReserve = ({ city, start_time, end_time, num, other }) => {
 const fetchGetUserReserveList = () => {
   return http
     .get(USERRESERVELIST)
+    .then(({ data }) => {
+      return request.success(data);
+    })
+    .catch((error) => request.error(error));
+};
+
+const fetchGetFreeDayList = () => {
+  return http
+    .get(FREEDAYLIST)
     .then(({ data }) => {
       return request.success(data);
     })
@@ -150,5 +160,6 @@ export {
   fetchGetIncome,
   fetchGetUserReserve,
   fetchGetUserReserveList,
+  fetchGetFreeDayList,
   fetchGetPhone,
 };

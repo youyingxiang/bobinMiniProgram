@@ -16,5 +16,7 @@ export const HOUSE = '/MiniProgram/house';
 export const USERRESERVE = '/MiniProgram/user-reserves';
 // 业主预约记录
 export const USERRESERVELIST = '/MiniProgram/user-reserve-list';
+// 业主免费入住余额
+export const FREEDAYLIST = '/MiniProgram/free-day-list';
 // 手机号
 export const GETPHONE = '/MiniProgram/get-phone-number';

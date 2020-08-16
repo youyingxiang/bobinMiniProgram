@@ -17,6 +17,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    freeDayList: [],
     userInfo: null,
     userReverseList: [],
   },
@@ -26,6 +27,7 @@ Page({
    */
   onLoad: function(options) {
     this.getUserReverseList();
+    this.getFreeDayList();
     let reservemsg = getStorageFlash('reservemsg');
     if (reservemsg) {
       Toast.success(reservemsg);
@@ -43,6 +45,16 @@ Page({
         userReverseList: data,
       });
     }
+  },
+
+  getFreeDayList: function() {
+    userServices.fetchGetFreeDayList().then(({ code, data, message }) => {
+      if (code == 200) {
+        this.setData({
+          freeDayList: data,
+        });
+      }
+    });
   },
 
   userReverse: function() {

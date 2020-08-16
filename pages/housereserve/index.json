@@ -5,6 +5,7 @@
     "van-panel": "@vant/weapp/panel/index",
     "van-cell": "@vant/weapp/cell/index",
     "van-datetime-picker": "@vant/weapp/datetime-picker/index",
+    "van-stepper": "@vant/weapp/stepper/index",
     "van-popup": "@vant/weapp/popup/index"
   }
 }
