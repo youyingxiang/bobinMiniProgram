@@ -1,0 +1,23 @@
+/* pages/door_lock/index.wxss */
+
+.grid-tr {
+    font-size: 14px !important;
+    color: rgba(69, 90, 100, 0.6);
+    height: 40px;
+    justify-content:center;
+    align-items:center;
+    display:flex;
+}
+
+.grid-th {
+    font-size: 14px !important;
+}
+
+.clearfix:after{
+    display:block;
+    clear:both;
+    content:"";
+    visibility:hidden; 
+    height:0;
+} 
+.clearfix{zoom:1}

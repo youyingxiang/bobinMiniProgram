@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "预约情况",
+  "usingComponents": {
+    "van-cell": "@vant/weapp/cell/index",
+    "van-grid": "@vant/weapp/grid/index",
+    "van-datetime-picker": "@vant/weapp/datetime-picker/index",
+    "van-popup": "@vant/weapp/popup/index",
+    "van-grid-item": "@vant/weapp/grid-item/index"
+  }
+}

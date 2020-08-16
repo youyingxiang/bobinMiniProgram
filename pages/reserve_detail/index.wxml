@@ -1,0 +1,17 @@
+<van-cell title="本月入住情况" title-style="color:rgba(69, 90, 100, 0.6)" />
+<van-grid column-num="3">
+    <van-grid-item use-slot wx:for="{{reserveDetail.checkedin_day}}" wx:key="key" wx:for-item='item'>
+        <view>
+            <view style="text-align:center">{{item.day}}天</view>
+            <view style="text-align:center">{{item.status}}</view>
+        </view>
+    </van-grid-item>
+</van-grid>
+<van-cell title="预约情况" title-style="color:rgba(69, 90, 100, 0.6)" />
+<van-cell value="{{ currentYearMonth }}" readonly title="选择时间" is-link bind:click="showPopup" />
+<van-popup show="{{ show }}" position="bottom" custom-style="height: 40%">
+    <van-datetime-picker type="year-month" value="{{ currentDate }}" min-date="{{ minDate }}" bind:input="onInput" bind:confirm="onConfirm" bind:cancel="onCancel" />
+</van-popup>
+<van-cell-group>
+    <van-cell wx:for="{{reserveDetail.reserve_list}}" wx:key="key" wx:for-item='item' title="{{item.date}}" value="¥ {{item.price | 0}}元 {{item.way_name}}" />
+</van-cell-group>

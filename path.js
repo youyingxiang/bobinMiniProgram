@@ -20,3 +20,7 @@ export const USERRESERVELIST = '/MiniProgram/user-reserve-list';
 export const FREEDAYLIST = '/MiniProgram/free-day-list';
 // 手机号
 export const GETPHONE = '/MiniProgram/get-phone-number';
+// 获取预约情况详情
+export const GETRESERVEDETAIL = '/MiniProgram/reserve-detail';
+// 门锁记录
+export const GETDOORLOCKLIST = '/MiniProgram/door-lock-list';
