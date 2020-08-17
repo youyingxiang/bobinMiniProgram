@@ -402,6 +402,11 @@ esprima@~4.0.0:
   resolved "https://registry.npm.taobao.org/esprima/download/esprima-4.0.1.tgz#13b04cdb3e6c5d19df91ab6987a8695619b0aa71"
   integrity sha1-E7BM2z5sXRnfkatph6hpVhmwqnE=
 
+fast-deep-equal@^2.0.1:
+  version "2.0.1"
+  resolved "https://r.cnpmjs.org/fast-deep-equal/download/fast-deep-equal-2.0.1.tgz#7b05218ddf9667bf7f370bf7fdb2cb15fdd0aa49"
+  integrity sha1-ewUhjd+WZ79/Nwv3/bLLFf3Qqkk=
+
 gensync@^1.0.0-beta.1:
   version "1.0.0-beta.1"
   resolved "https://registry.npm.taobao.org/gensync/download/gensync-1.0.0-beta.1.tgz#58f4361ff987e5ff6e1e7a210827aa371eaac269"
@@ -486,6 +491,14 @@ minimist@^1.2.5:
   version "1.2.5"
   resolved "https://registry.npm.taobao.org/minimist/download/minimist-1.2.5.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fminimist%2Fdownload%2Fminimist-1.2.5.tgz#67d66014b66a6a8aaa0c083c5fd58df4e4e97602"
   integrity sha1-Z9ZgFLZqaoqqDAg8X9WN9OTpdgI=
+
+miniprogram-computed@^2.1.1:
+  version "2.1.1"
+  resolved "https://r.cnpmjs.org/miniprogram-computed/download/miniprogram-computed-2.1.1.tgz#c393e967a8f6e5ee26a4205f69ae3eb9a23b7b07"
+  integrity sha1-w5PpZ6j25e4mpCBfaa4+uaI7ewc=
+  dependencies:
+    fast-deep-equal "^2.0.1"
+    rfdc "^1.1.4"
 
 mkdirp@^0.5.0:
   version "0.5.5"
@@ -593,6 +606,11 @@ resolve@^1.3.2:
   integrity sha1-sllBtUloIxzC0bt2p5y38sC/hEQ=
   dependencies:
     path-parse "^1.0.6"
+
+rfdc@^1.1.4:
+  version "1.1.4"
+  resolved "https://r.cnpmjs.org/rfdc/download/rfdc-1.1.4.tgz#ba72cc1367a0ccd9cf81a870b3b58bd3ad07f8c2"
+  integrity sha1-unLME2egzNnPgahws7WL060H+MI=
 
 safe-buffer@~5.1.1:
   version "5.1.2"

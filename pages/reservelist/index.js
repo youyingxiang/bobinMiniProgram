@@ -17,6 +17,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    active: 0,
     freeDayList: [],
     userInfo: null,
     userReverseList: [],
@@ -26,7 +27,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    this.getUserReverseList();
+    this.getUserReverseList(this.data.active);
     this.getFreeDayList();
     let reservemsg = getStorageFlash('reservemsg');
     if (reservemsg) {
@@ -34,12 +35,10 @@ Page({
     }
   },
 
-  getUserReverseList: async function() {
-    const {
-      code,
-      data,
-      message,
-    } = await userServices.fetchGetUserReserveList();
+  getUserReverseList: async function(index) {
+    const { code, data, message } = await userServices.fetchGetUserReserveList(
+      index === 1 ? [1, 2] : [0]
+    );
     if (code == 200) {
       this.setData({
         userReverseList: data,
@@ -100,4 +99,9 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function() {},
+
+  onTabChange(event) {
+    this.setData({ active: event.detail.index });
+    this.getUserReverseList(event.detail.index);
+  },
 });

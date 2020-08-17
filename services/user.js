@@ -122,9 +122,9 @@ const fetchGetUserReserve = ({ city, start_time, end_time, num, memo }) => {
     .catch((error) => request.error(error));
 };
 
-const fetchGetUserReserveList = () => {
+const fetchGetUserReserveList = (status) => {
   return http
-    .get(USERRESERVELIST)
+    .get(USERRESERVELIST, { status: status.join(',') })
     .then(({ data }) => {
       return request.success(data);
     })
@@ -166,17 +166,15 @@ const fetchGetReserveDetail = ({ date, houseid }) => {
 
 const fetchGetDoorLockList = ({ date, houseid }) => {
   return http
-    .get(GETDOORLOCKLIST
-      , {
-        date,
-        houseid,
-      })
+    .get(GETDOORLOCKLIST, {
+      date,
+      houseid,
+    })
     .then(({ data }) => {
       return request.success(data);
     })
     .catch((error) => request.error(error));
 };
-
 
 export {
   fetchOpenId,
@@ -191,5 +189,5 @@ export {
   fetchGetFreeDayList,
   fetchGetPhone,
   fetchGetReserveDetail,
-  fetchGetDoorLockList
+  fetchGetDoorLockList,
 };

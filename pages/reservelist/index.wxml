@@ -1,5 +1,9 @@
 <view class="content">
     <!-- <view class="header"></view> -->
+    <van-tabs active="{{ active }}" bind:change="onTabChange">
+        <van-tab title="已预定"></van-tab>
+        <van-tab title="已入住"></van-tab>
+    </van-tabs>
     <view wx:if="{{userReverseList.length!=0}}">
         <van-panel wx:for="{{userReverseList}}" wx:key="key" wx:for-item='item' custom-class="house-list">
             <van-cell title="入住时间：{{ item.start_time }}" value="{{ item.status_text }}" />
